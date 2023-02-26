@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>漫漫长路 | Yusu</title>
+  <title>结构体 | Yusu</title>
 
   
     
@@ -701,7 +701,7 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="https://s3.bmp.ovh/imgs/2022/03/31/e0ab9ced670fb348.jpg" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="https://i.328888.xyz/2023/02/26/EGPoc.jpeg" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
@@ -712,7 +712,7 @@
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
           <script>
             var typed = new Typed("#post-detail-header-title", {
-              strings: ['漫漫长路'],
+              strings: ['结构体'],
               startDelay: 100,
               typeSpeed: 100,
               loop: false,
@@ -737,7 +737,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2022-04-24</span>
+        <span class="post-time">2023-02-26</span>
       </div>
       
       <div class="post-tags-categories">
@@ -745,8 +745,8 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/tags/Life/" class="">
-              Life
+            <a href="/tags/%E7%BB%93%E6%9E%84%E4%BD%93/" class="">
+              结构体
             </a>
           
         </div>
@@ -755,17 +755,124 @@
         <div class="categories">
           <i class="iconfont iconbookmark1"></i>
           
-            <a href="/categories/Person/" class="">
-              Person
+            <a href="/categories/C-C/" class="">
+              C/C++
             </a>
           
         </div>
         
       </div>
       <div class="post-content">
-        <hr>
-<p><font face="STCAIYUN" color="#770000" size=6>关关难过关关过,前路漫漫目灿业.</font></p>
-<p><img "" class="lazyload placeholder" data-original="https://s3.bmp.ovh/imgs/2022/04/24/26a1fee2910272a9.jpg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
+        <p>关于结构体内存对齐</p>
+<p>首先得掌握结构体的对齐规则：</p>
+<ol>
+<li><p>第一个成员在与结构体变量偏移量为0的地址处。</p>
+</li>
+<li><p>其他成员变量要对齐到某个数字（对齐数）的整数倍的地址处。对齐数 = 编译器默认的一个对齐数 与 该成员大小的较小值（VS中默认的对齐数值为8）。</p>
+</li>
+<li><p>结构体总大小为最大对齐数（每个成员变量都有一个对齐数）的整数倍。</p>
+</li>
+</ol>
+<p>4.如果嵌套了结构体的情况，嵌套的结构体对齐到自己的最大对齐数的整数倍处，结构体的整体大小就是所有最大对齐数（含嵌套结构体的对齐数）的整数倍。</p>
+<p>下面是几个实例：</p>
+<pre><code>//练习1.
+struct A &#123;
+ char c;
+ int i;
+ char b;
+&#125;
+
+//练习2
+struct SS2
+&#123;
+ char c1;
+ char c2;
+ int i;
+&#125;;
+ 
+//练习3
+struct S3
+&#123;
+ double d;
+ char c;
+ int i;
+&#125;;
+
+//练习4
+struct S4
+&#123;
+ char c1;
+ struct S3 s3;
+ double d;
+&#125;
+</code></pre>
+<ul>
+<li>练习1：</li>
+</ul>
+<p> 1.首先：char c为第一个成员变量，遵循第一条规则，char c从偏移量0开始，占1个字节，指针指向下一个偏移地址1。</p>
+<p> 2.接下来存放int i, 但偏移地址 “1” 并不是对齐数4的整数倍对齐数4来自（对齐数 = 编译器默认的一个对齐数 与 该成员大小的较小值。）规则2，成员变量2是int类型，大小为4字节，在VS中，编译器默认对齐数为8，8与4的较小值为4，所以成员变量2的对齐数为4。那么指针需要移动到对齐数4的整数倍，即偏移量4地址处，开始存放int i 占4个字节，且偏移量1~3为空闲区，浪费了。</p>
+<p> 3.接下来指针指向了偏移地址9，第三个成员变量char b的对齐数是1，偏移9是对齐数1的整数倍，符合条件，存放char b，占一字节，指针指向偏移10地址，由第三条规则可知，. 结构体总大小为最大对齐数（每个成员变量都有一个对齐数）的整数倍，struct A最大对齐数是int i的对齐数4，那么现偏移10并不是对齐数4的整数倍，指针继续向下寻找符合条件的偏移地址，最后指针指向偏移12，12是4的整数倍，符合规则，那么偏移结束。</p>
+<p> 综上所述，结果共占12字节，内存中浪费了6个字节。</p>
+<ul>
+<li><p>练习2：</p>
+<pre><code>  1.首先：char c1为第一个成员变量，遵循第一条规则，char c从偏移量0开始，占1个字节，指针指向下一个偏移地址1
+
+  2.接下来存放char c2,c2的对齐数是1，那么偏移地址“1”是对齐数1的整数倍，开始存放char c2,占一字节。
+
+  3.最后存放int i, 指针现指向偏移量为2的地址，但偏移地址 “2” 并不是int i对齐数4的整数倍，那么指针需要移动到对齐数4的整数倍，即偏移量4地址处，开始存放int i 占4个字节。之后，指针指向了偏移量为8的地址，偏移量八是结构体总大小最大对齐数4的整数倍，符合规则，那么偏移结束。
+
+  结果共占8字节，内存中浪费了2个字节（偏移地址2~3）
+</code></pre>
+</li>
+<li><p>练习4.结构体内存分配过程：</p>
+<p> 1.首先：char c1为第一个成员变量，遵循第一条规则，char c从偏移量0开始，占1个字节，指针指向下一个偏移地址1</p>
+<p> 2.其次，第二个成员变量为结构体S3，说明是嵌套结构体，通过刚才对S3的结构体大小可知是16字节，且S3中最大对齐数为8，通过规则4可知，现指针指向的偏移地址1并不是对齐数8的整数倍，所以指针需要向后跳转，直到指针指向偏移量为8的地址，才符合要求，开始存放struct S3成员变量，共16字节。</p>
+<p>  3.最后，指针指向偏移量为24的地址处，最后一个成员变量为double d，d的对齐数为8，偏移地址“24”是对齐数8的整数倍，所以开始存放double d，占8字节。</p>
+<pre><code>  现在指针指向了偏移量为32的地址，32是整个结构体最大对齐数8的整数倍，偏移结束，结构体S4共占32字节，浪费了7个字节（偏移地址1~7）。
+</code></pre>
+</li>
+</ul>
+<p>为何要采用内存对齐的存储方式呢？</p>
+<ol>
+<li>平台原因(移植原因)： 不是所有的硬件平台都能访问任意地址上的任意数据的；某些硬件平台只能在某些地址处取某些特 定类型的数据，否则抛出硬件异常。</li>
+<li>性能原因： 数据结构(尤其是栈)应该尽可能地在自然边界上对齐。 原因在于，为了访问未对齐的内存，处理器需要作两次内存访问；而对齐的内存访问仅需要一次访问。</li>
+<li>总体来说： 结构体的内存对齐是拿空间来换取时间的做法。</li>
+</ol>
+<p>那我们该如何在不破坏内存对齐的同时，又能节省空间呢？</p>
+<p> 其实，练习1和练习2就是很好的例子，这两个结构体成员变量相同，都是两个char型和一个int型成员，但它们所规划的变量位置不同。第一个结构体的成员分配是char，int，char 共占12字节；第二个结构体成员分配是char，char，int，共占8字节。</p>
+<p> 从这里便可得出结论：让占用空间小的成员尽量集中在一起。</p>
+<p>关于如何修改默认对其数</p>
+<p>在VS中，默认的对齐数为8字节，其他编译器也有属于它们的默认对齐数，但不都是8。</p>
+<p>我们可以通过指令来修改系统的对齐数：</p>
+<pre><code>                    #pragma pack( )——指令
+</code></pre>
+<p>系统默认的对齐数： #pragma pack(8)</p>
+<p>修改只能填写2的n次方（n&gt;=0)，例如 #pragma pack(4)， #pragma pack(1),                                                                                           <strong>#pragma pack(16)……</strong></p>
+<pre><code>struct C &#123;
+ int i;
+ double d;
+ &#125;;
+ 
+#pragma pack(4)//修改默认对齐数为4
+struct C2 &#123;
+ int i;
+ double d;
+&#125;;
+#pragma pack()//取消设置的默认对齐数，还原为默认
+ 
+ 
+#pragma pack(1)//修改默认对齐数为1
+struct C3 &#123;
+ char a;
+ int i;
+ char c;
+&#125;;
+#pragma pack()//取消设置的默认对齐数，还原为默认
+</code></pre>
+<p>struct C若不修改对齐数，大小为16字节</p>
+<p>struct C2若不修改对齐数是16字节；修改对齐数为4后，12字节</p>
+<p>struct C3不修改对齐数是12字节；修改对齐数为1后成为6字节</p>
+<p>结论： 结构在对齐方式不合适的时候，我么可以自己更改默认对齐数。</p>
 
       </div>
       
@@ -776,7 +883,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/2022/04/24/研424/" target="_blank" title="漫漫长路">https://xfrl.github.io/2022/04/24/研424/</a>
+    <a href="/2023/02/26/结构体内存对齐/" target="_blank" title="结构体">https://xfrl.github.io/2023/02/26/结构体内存对齐/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -794,43 +901,23 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="https://i.328888.xyz/2023/02/26/EGPoc.jpeg" style="background-size: cover; 
-      background-position: center center;">
-    </div>
-    <a href="/2023/02/26/%E7%BB%93%E6%9E%84%E4%BD%93%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/" class="post-nav-link">
-      <div class="title">
-        <i class="fa fa-angle-left"></i> Prev:
-        <div>结构体</div>
-      </div>
-      
-      <!-- <div class="content">
-        关于结构体内存对齐
-首先得掌握结构体的对齐规则：
-
-第一个成员在与结构体变量偏移量为0的地址处。
-
-其他成员变量要对齐到
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="https://i.bmp.ovh/imgs/2022/01/46b02dd4104e2713.png" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="https://s3.bmp.ovh/imgs/2022/03/31/e0ab9ced670fb348.jpg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2022/01/01/%E5%9F%8E%E5%8D%97/" class="post-nav-link">
+    <a href="/2022/04/24/%E7%A0%94424/" class="post-nav-link">
       <div class="title">
         Next: <i class="fa fa-angle-right"></i>
-        <div>关于这一年</div>
+        <div>漫漫长路</div>
       </div>
       <!-- <div class="content">
         
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;时间过得好快，岁末已至
+关关难过关关过,前路漫漫目灿业.
+
+
       </div> -->
     </a>
   </div>

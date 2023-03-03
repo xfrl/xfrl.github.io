@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>字符串分割函数</title>
+      <link href="2023/03/03/strtok%E5%87%BD%E6%95%B0/"/>
+      <url>2023/03/03/strtok%E5%87%BD%E6%95%B0/</url>
+      
+        <content type="html"><![CDATA[<h4 id="strtok-函数"><a href="#strtok-函数" class="headerlink" title="strtok()函数"></a>strtok()函数</h4><p>char <em>strtok ( char</em> str, const char * sep );</p><ul><li><em>sep参数是个字符串，定义了用作分隔符的字符集合</em></li><li><em>第一个参数指定一个字符串，它包含了0个或者多个由sep字符串中一个或者多个分隔符分割的标记。</em></li><li><em>strtok函数找到str中的下一个标记，并将其用 \0 结尾，返回一个指向这个标记的指针。（注：strtok函数会</em><br><em>改变被操作的字符串，所以在使用strtok函数切分的字符串一般都是临时拷贝的内容并且可修改。）</em><ul><li><em>strtok函数的第一个参数不为 NULL ，函数将找到str中第一个标记，strtok函数将保存它在字符串中的位置。</em></li></ul></li><li><em>strtok函数的第一个参数为 NULL ，函数将在同一个字符串中被保存的位置开始，查找下一个标记。</em></li><li><em>如果字符串中不存在更多的标记，则返回 NULL 指针。</em></li></ul><ul><li>实例：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="keyword">char</span> str[<span class="number">80</span>] = <span class="string">&quot;this is - my - blog&quot;</span>;</span><br><span class="line">   <span class="keyword">const</span> <span class="keyword">char</span> s[<span class="number">2</span>] = <span class="string">&quot;-&quot;</span>;</span><br><span class="line">   <span class="keyword">char</span> *token;</span><br><span class="line">   </span><br><span class="line">   <span class="comment">/* 获取第一个子字符串 */</span></span><br><span class="line">   token = <span class="built_in">strtok</span>(str, s);</span><br><span class="line">   </span><br><span class="line">   <span class="comment">/* 继续获取其他的子字符串 */</span></span><br><span class="line">   <span class="keyword">while</span>( token != <span class="literal">NULL</span> ) &#123;</span><br><span class="line">      <span class="built_in">printf</span>( <span class="string">&quot;%s\n&quot;</span>, token );</span><br><span class="line">    </span><br><span class="line">      token = <span class="built_in">strtok</span>(<span class="literal">NULL</span>, s);</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">return</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> C++ </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 字符串 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>关于结构体内存对齐</title>
       <link href="2023/02/26/%E7%BB%93%E6%9E%84%E4%BD%93%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/"/>
       <url>2023/02/26/%E7%BB%93%E6%9E%84%E4%BD%93%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</url>

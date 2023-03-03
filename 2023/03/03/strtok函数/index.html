@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Vue生命周期 | Yusu</title>
+  <title>字符串分割函数 | Yusu</title>
 
   
     
@@ -701,7 +701,7 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="https://img12.360buyimg.com/ddimg/jfs/t1/198814/3/13158/831018/616cdf4fE41623d74/185a0613b9f811d2.jpg" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="https://i.328888.xyz/2023/03/03/F8VtE.jpeg" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
@@ -712,7 +712,7 @@
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
           <script>
             var typed = new Typed("#post-detail-header-title", {
-              strings: ['Vue生命周期'],
+              strings: ['字符串分割函数'],
               startDelay: 100,
               typeSpeed: 100,
               loop: false,
@@ -737,7 +737,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2021-10-18</span>
+        <span class="post-time">2023-03-03</span>
       </div>
       
       <div class="post-tags-categories">
@@ -745,8 +745,8 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/tags/Vue/" class="">
-              Vue
+            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="">
+              字符串
             </a>
           
         </div>
@@ -755,50 +755,28 @@
         <div class="categories">
           <i class="iconfont iconbookmark1"></i>
           
-            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="">
-              前端
+            <a href="/categories/C/" class="">
+              C++
             </a>
           
         </div>
         
       </div>
       <div class="post-content">
-        <p>vue官网说，“你暂时不用搞清楚这些…”,我觉得你既然准备用vue做开发的，不搞懂搞透它，你以后会发现踩的坑终究还是有它引起的，等以后再来补坑，不如现在就拿下它。</p>
-<h3 id="一、vue的生命周期是什么"><a href="#一、vue的生命周期是什么" class="headerlink" title="一、vue的生命周期是什么"></a><strong>一、vue的生命周期是什么</strong></h3><p>  vue每个组件都是独立的，每个组件都有一个属于它的生命周期，从一个组件<strong>创建、数据初始化、挂载、更新、销毁</strong>，这就是一个组件所谓的生命周期。在组件中具体的方法有:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">  beforeCreate</span><br><span class="line"></span><br><span class="line">  created</span><br><span class="line"></span><br><span class="line">  beforeMount</span><br><span class="line"></span><br><span class="line">  mounted</span><br><span class="line"></span><br><span class="line">  (</span><br><span class="line"></span><br><span class="line">​     beforeUpdate</span><br><span class="line"></span><br><span class="line">​     updated</span><br><span class="line"></span><br><span class="line">   )</span><br><span class="line"></span><br><span class="line">  beforeDestroy</span><br><span class="line"></span><br><span class="line">  destroyed</span><br></pre></td></tr></table></figure>
-
-
-
-<p>  对应的中文就如其字面意思，英文不好的童鞋可以有道翻翻</p>
-<p>  好了，这里要上图啦~~~</p>
-<p><img "" class="lazyload placeholder" data-original="https://img12.360buyimg.com/ddimg/jfs/t1/209261/16/5752/1708407/616cdfbbEe62861ae/65e1621214419e05.png" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
-<h3 id="二、vue生命周期的在项目中的执行顺序"><a href="#二、vue生命周期的在项目中的执行顺序" class="headerlink" title="二、vue生命周期的在项目中的执行顺序"></a>二、vue生命周期的在项目中的执行顺序</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line">data () &#123;</span><br><span class="line"></span><br><span class="line">  return &#123;</span><br><span class="line"></span><br><span class="line">  rendered: false,</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">1.beforeCeate()&#123;</span><br><span class="line"></span><br><span class="line">  console.log(this.rendered);  // undefined </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">2.created() &#123;</span><br><span class="line"></span><br><span class="line">  console.log(this.$el);//undefined</span><br><span class="line"></span><br><span class="line">   console.log(this.rendered); // false</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">2.created() &#123;</span><br><span class="line"></span><br><span class="line">  console.log(this.$el);//undefined</span><br><span class="line"></span><br><span class="line">   console.log(this.rendered); // false</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">4.mounted() &#123;</span><br><span class="line"></span><br><span class="line">  console.log(this.$el);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">5.beforeDestroy()&#123;</span><br><span class="line"></span><br><span class="line">  console.log(this.$el);</span><br><span class="line"></span><br><span class="line">  console.log(this.rendered); </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">6.destroyed() &#123;</span><br><span class="line"></span><br><span class="line">  console.log(this.$el);</span><br><span class="line"></span><br><span class="line">  console.log(this.rendered);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<h5 id="beforeCreate-创建前"><a href="#beforeCreate-创建前" class="headerlink" title="beforeCreate( 创建前 )"></a>beforeCreate( 创建前 )</h5><p>在实例初始化之后，数据观测和事件配置之前被调用，此时组件的选项对象还未创建，el 和 data 并未初始化，因此无法访问methods， data， computed等上的方法和数据。</p>
-<h5 id="created-创建后-）"><a href="#created-创建后-）" class="headerlink" title="created ( 创建后 ）"></a>created ( 创建后 ）</h5><p>实例已经创建完成之后被调用，在这一步，实例已完成以下配置：数据观测、属性和方法的运算，watch/event事件回调，完成了data 数据的初始化，el没有。 然而，挂在阶段还没有开始, $el属性目前不可见，这是一个常用的生命周期，因为你可以调用methods中的方法，改变data中的数据，并且修改可以通过vue的响应式绑定体现在页面上，，获取computed中的计算属性等等，通常我们可以在这里对实例进行预处理，也有一些童鞋喜欢在这里发ajax请求，值得注意的是，这个周期中是没有什么方法来对实例化过程进行拦截的，因此假如有某些数据必须获取才允许进入页面的话，并不适合在这个方法发请求，建议在组件路由钩子beforeRouteEnter中完成</p>
-<h5 id="beforeMount"><a href="#beforeMount" class="headerlink" title="beforeMount"></a>beforeMount</h5><p>挂在开始之前被调用，相关的render函数首次被调用（虚拟DOM），实例已完成以下的配置： 编译模板，把data里面的数据和模板生成html，完成了el和data 初始化，注意此时还没有挂在html到页面上。</p>
-<h5 id="mounted"><a href="#mounted" class="headerlink" title="mounted"></a>mounted</h5><p>挂在完成，也就是模板中的HTML渲染到HTML页面中，此时一般可以做一些ajax操作，mounted只会执行一次。</p>
-<h5 id="beforeUpdate"><a href="#beforeUpdate" class="headerlink" title="beforeUpdate"></a>beforeUpdate</h5><p>在数据更新之前被调用，发生在虚拟DOM重新渲染和打补丁之前，可以在该钩子中进一步地更改状态，不会触发附加地重渲染过程</p>
-<h5 id="updated（更新后）"><a href="#updated（更新后）" class="headerlink" title="updated（更新后）"></a>updated（更新后）</h5><p>在由于数据更改导致地虚拟DOM重新渲染和打补丁只会调用，调用时，组件DOM已经更新，所以可以执行依赖于DOM的操作，然后在大多是情况下，应该避免在此期间更改状态，因为这可能会导致更新无限循环，该钩子在服务器端渲染期间不被调用</p>
-<h5 id="beforeDestroy（销毁前）"><a href="#beforeDestroy（销毁前）" class="headerlink" title="beforeDestroy（销毁前）"></a>beforeDestroy（销毁前）</h5><p>在实例销毁之前调用，实例仍然完全可用，</p>
-<ol>
-<li>这一步还可以用this来获取实例，</li>
-<li>一般在这一步做一些重置的操作，比如清除掉组件中的定时器 和 监听的dom事件</li>
-</ol>
-<h5 id="destroyed（销毁后）"><a href="#destroyed（销毁后）" class="headerlink" title="destroyed（销毁后）"></a>destroyed（销毁后）</h5><p>在实例销毁之后调用，调用后，所以的事件监听器会被移出，所有的子实例也会被销毁，该钩子在服务器端渲染期间不被调用</p>
-<h3 id="三、vue中内置的方法-属性和vue生命周期的运行顺序"><a href="#三、vue中内置的方法-属性和vue生命周期的运行顺序" class="headerlink" title="三、vue中内置的方法 属性和vue生命周期的运行顺序"></a><strong>三、vue中内置的方法 属性和vue生命周期的运行顺序</strong></h3><p>  从第一二点可知道data的初始化是在created时已经完成数据观测(data observer)，并且诸如methods、computed属性 props等已经初始化；那问题来了，</p>
-<p>data props computed watch methods他们之间的生成顺序是什么呢？</p>
-<p>根据翻看vue源码可知：</p>
-<p><strong>props =&gt; methods =&gt;data =&gt; computed =&gt; watch</strong>; </p>
-<h3 id="四、自己构造的方法与vue生命周期的运行顺序-如show这些"><a href="#四、自己构造的方法与vue生命周期的运行顺序-如show这些" class="headerlink" title="四、自己构造的方法与vue生命周期的运行顺序 如show这些"></a><strong>四、自己构造的方法与vue生命周期的运行顺序 如show这些</strong></h3><p>  往往我们在开发项目时都经常用到 $refs 来直接访问子组件的方法，但是这样调用的时候可能会导致数据的延迟滞后的问题，则会出现bug。</p>
-<p>解决方法则是推荐采取<strong>异步回调</strong>的方法，然后传参进去，严格遵守vue的生命周期就可以解决 推荐 es6 的promise。</p>
-<p>示例代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">handleAsync () &#123;</span><br><span class="line"></span><br><span class="line">  return new Promise(resolve=&gt;&#123;</span><br><span class="line"></span><br><span class="line">​    const res=&quot;&quot;;</span><br><span class="line"></span><br><span class="line">​    resolve(res)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">async handleShow() &#123;</span><br><span class="line"></span><br><span class="line">  await this.handleAsync().then(res=&gt;&#123;</span><br><span class="line"></span><br><span class="line">  this.$refs.child.show(res);</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a><strong>五、总结</strong></h3><p>  vue 的生命周期，总得来说就是实例的创建和销毁这段时间的一个机制吧。也是vue框架的数据间的交互通信。其实现在看来也没那么难，但是vue的源码实现这一套机制那是难得一逼，涉及到复杂的算法如<strong>diff算法</strong>，有兴趣的童鞋可以去深入了解一下。</p>
+        <h4 id="strtok-函数"><a href="#strtok-函数" class="headerlink" title="strtok()函数"></a>strtok()函数</h4><p>char <em>strtok ( char</em> str, const char * sep );</p>
+<ul>
+<li><em>sep参数是个字符串，定义了用作分隔符的字符集合</em></li>
+<li><em>第一个参数指定一个字符串，它包含了0个或者多个由sep字符串中一个或者多个分隔符分割的标记。</em></li>
+<li><em>strtok函数找到str中的下一个标记，并将其用 \0 结尾，返回一个指向这个标记的指针。（注：strtok函数会</em><br><em>改变被操作的字符串，所以在使用strtok函数切分的字符串一般都是临时拷贝的内容并且可修改。）</em><ul>
+<li><em>strtok函数的第一个参数不为 NULL ，函数将找到str中第一个标记，strtok函数将保存它在字符串中的位置。</em></li>
+</ul>
+</li>
+<li><em>strtok函数的第一个参数为 NULL ，函数将在同一个字符串中被保存的位置开始，查找下一个标记。</em></li>
+<li><em>如果字符串中不存在更多的标记，则返回 NULL 指针。</em></li>
+</ul>
+<ul>
+<li>实例：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="keyword">char</span> str[<span class="number">80</span>] = <span class="string">&quot;this is - my - blog&quot;</span>;</span><br><span class="line">   <span class="keyword">const</span> <span class="keyword">char</span> s[<span class="number">2</span>] = <span class="string">&quot;-&quot;</span>;</span><br><span class="line">   <span class="keyword">char</span> *token;</span><br><span class="line">   </span><br><span class="line">   <span class="comment">/* 获取第一个子字符串 */</span></span><br><span class="line">   token = <span class="built_in">strtok</span>(str, s);</span><br><span class="line">   </span><br><span class="line">   <span class="comment">/* 继续获取其他的子字符串 */</span></span><br><span class="line">   <span class="keyword">while</span>( token != <span class="literal">NULL</span> ) &#123;</span><br><span class="line">      <span class="built_in">printf</span>( <span class="string">&quot;%s\n&quot;</span>, token );</span><br><span class="line">    </span><br><span class="line">      token = <span class="built_in">strtok</span>(<span class="literal">NULL</span>, s);</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">return</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
 
       </div>
       
@@ -809,7 +787,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/2021/10/18/Vue生命周期/" target="_blank" title="Vue生命周期">https://xfrl.github.io/2021/10/18/Vue生命周期/</a>
+    <a href="/2023/03/03/strtok函数/" target="_blank" title="字符串分割函数">https://xfrl.github.io/2023/03/03/strtok函数/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -827,39 +805,25 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="https://img14.360buyimg.com/ddimg/jfs/t1/216338/39/1657/1021929/617510b8Ea87859a0/1b63d2a918828146.png" style="background-size: cover; 
-      background-position: center center;">
-    </div>
-    <a href="/2021/10/23/Train/" class="post-nav-link">
-      <div class="title">
-        <i class="fa fa-angle-left"></i> Prev:
-        <div>Train</div>
-      </div>
-      
-      <!-- <div class="content">
-        
-你有没有在火车上睡着过？第一次乘坐这辆车时，我并没有打瞌睡，所见的风景、远方的绿色田野和浩瀚的大海，都让我无法将目光从
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="https://img10.360buyimg.com/ddimg/jfs/t1/181839/8/14681/772267/60f2be83E768a212b/78b7bb21016a27b6.png" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="https://i.328888.xyz/2023/02/26/EGPoc.jpeg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2021/07/15/Django/" class="post-nav-link">
+    <a href="/2023/02/26/%E7%BB%93%E6%9E%84%E4%BD%93%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/" class="post-nav-link">
       <div class="title">
         Next: <i class="fa fa-angle-right"></i>
-        <div>Django</div>
+        <div>关于结构体内存对齐</div>
       </div>
       <!-- <div class="content">
-        Django命令及配置切换到创建项目的目录  
-1cd C:\Users\admin\Desktop\DjangoPro
+        关于结构体内存对齐
+首先得掌握结构体的对齐规则：
+
+第一个成员在与结构体变量偏移量为0的地址处。
+
+其他成员变量要对齐到
       </div> -->
     </a>
   </div>

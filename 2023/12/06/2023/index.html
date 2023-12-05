@@ -10,7 +10,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Python伪私有属性 | Yusu</title>
+  <title>2023 | Yusu</title>
 
   
     
@@ -701,7 +701,7 @@
 
 
 
-<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="https://img12.360buyimg.com/ddimg/jfs/t1/183148/23/16844/4164537/6103e934Ea66187eb/cc2134e788105bb8.png" style="background-repeat: no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="https://picdm.sunbangyan.cn/2023/12/06/d453360b98888f838ac123994bbdf6d7.jpeg" style="background-repeat: no-repeat; background-size: cover; 
   background-position: center center;position: relative;">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
@@ -712,7 +712,7 @@
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
           <script>
             var typed = new Typed("#post-detail-header-title", {
-              strings: ['Python伪私有属性'],
+              strings: ['2023'],
               startDelay: 100,
               typeSpeed: 100,
               loop: false,
@@ -737,7 +737,7 @@
       
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time">2020-06-22</span>
+        <span class="post-time">2023-12-06</span>
       </div>
       
       <div class="post-tags-categories">
@@ -745,8 +745,8 @@
         <div class="tags">
           <i class="iconfont icontag"></i>
           
-            <a href="/tags/py%E5%9F%BA%E7%A1%80/" class="">
-              py基础
+            <a href="/tags/Life/" class="">
+              Life
             </a>
           
         </div>
@@ -755,37 +755,37 @@
         <div class="categories">
           <i class="iconfont iconbookmark1"></i>
           
-            <a href="/categories/python/" class="">
-              python
+            <a href="/categories/Person/" class="">
+              Person
             </a>
           
         </div>
         
       </div>
       <div class="post-content">
-        <h2 id="一、引言"><a href="#一、引言" class="headerlink" title="一、引言"></a>一、引言</h2><p>我们都知道：在Python中，没有类似<code>private</code>之类的关键字来声明私有方法或属性。</p>
-<p>Python中要声明私有属性，需要在属性前加上双下划线（但是结尾处不能有双下划线），如：<code>self.__a</code>。然而这样的什么方式并不是真正的私有，而是“伪私有”。</p>
-<p>Python的伪私有属性，实际是通过变量名压缩（mangling）来实现变量名局部化。变量名压缩的规则：在初始的变量名头部加上一个下划线，再加上类的名称，最后是初始变量名的名称。</p>
-<h2 id="二、实例"><a href="#二、实例" class="headerlink" title="二、实例"></a>二、实例</h2><h3 id="1-代码"><a href="#1-代码" class="headerlink" title="1. 代码"></a>1. 代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">	<span class="comment"># 私有类属性</span></span><br><span class="line">    __flag = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">	<span class="comment"># 私有实例方法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__func</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;ok&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(A.__dict__)</span><br><span class="line"><span class="number">123456789</span></span><br></pre></td></tr></table></figure>
+        <hr>
+<font face="STCAIYUN" size=4.5>
+光阴似箭、时光荏苒。回头看看自己的博客，原来也有接近1年没更新了。<br><br>
+这一年里，自己的状态不算太好，生活、工作都多少有些不愉快，人也就懒懒散散的了（虽然原本也没多努力）。<br><br>
+短短一年经历了毕业，考研，习惯了随波逐流，有人见尘埃，有人见星辰。<br><br>
+</font>
 
-<h3 id="2-执行"><a href="#2-执行" class="headerlink" title="2. 执行"></a>2. 执行</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">&#x27;__module__&#x27;</span>: <span class="string">&#x27;__main__&#x27;</span>, <span class="string">&#x27;_A__flag&#x27;</span>: <span class="number">0</span>, <span class="string">&#x27;_A__func&#x27;</span>: &lt;function A.__func at <span class="number">0x000002422B7789D0</span>&gt;, <span class="string">&#x27;__dict__&#x27;</span>: &lt;attribute <span class="string">&#x27;__dict__&#x27;</span> of <span class="string">&#x27;A&#x27;</span> objects&gt;, <span class="string">&#x27;__weakref__&#x27;</span>: &lt;attribute <span class="string">&#x27;__weakref__&#x27;</span> of <span class="string">&#x27;A&#x27;</span> objects&gt;, <span class="string">&#x27;__doc__&#x27;</span>: <span class="literal">None</span>&#125;</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<font face="STCAIYUN" color="#770000" size=4.5>
+“我们就这样，各自奔天涯”，来自歌曲中的一句话，将离别时不舍之情，表达的淋漓紧致。是啊，尽管我们也不想说离别，但是我们不得不这样，开始各自新的生活。<br><br>
+之前的年少气盛，之前的意气风发，之前的悲伤欣喜……我们在大学中的一切一切，都只能作为美好的回忆，藏在我们的心底。不过，我们不会后悔，也不会迷茫，因为那是我们年轻的时候，是我们的骄傲。<br><br>
+</font>
 
-<h3 id="3-分析"><a href="#3-分析" class="headerlink" title="3. 分析"></a>3. 分析</h3><p>通过上面的执行效果，我们可以看到：我们在类里面创建了一个私有类属性（__flag）、一个私有实例方法（__func），而我们在打印<code>__dict__</code>的时候发现——私有属性、私有方法的名字变了！此时显示：私有类属性（_A__flag）、私有实例方法（_A__func），这是为什么呢？</p>
-<p>之前我们说过：Python没有类似<code>private</code>之类的关键字来声明私有方法或属性，那么它是靠什么来区分私有、公有呢？靠的就是在属性前加上双下划线，此时我们的Python解释器在执行到这里的时候，发现了这个<code>__</code>。此时它会耍一个“小聪明”，也就是根据我们之前说的变量名压缩（mangling），给这个属性、方法换一个变量名进行存储。那么此时，就可以实现私有化了。</p>
-<h3 id="4-测试"><a href="#4-测试" class="headerlink" title="4. 测试"></a>4. 测试</h3><p>那么现在，我们去访问一下我们创建的类属性、实例方法，看一下效果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = A()</span><br><span class="line"><span class="built_in">print</span>(a.flag)</span><br><span class="line">a.func()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a.__flag)</span><br><span class="line">a.__func()</span><br><span class="line"><span class="comment"># AttributeError: &#x27;A&#x27; object has no attribute &#x27;flag&#x27;</span></span><br><span class="line"><span class="number">1234567</span></span><br></pre></td></tr></table></figure>
+<font face="STCAIYUN" size=4.5>
+这一年好像做了一点事情又好像没什么成就，好在没有增加多余的负债，也没有生病，健康喜乐挺好。<br><br>
+把博客作为灯塔 是串联自己想法，内心的灯塔。也是寻找志同道合之人，面向外界的灯塔。<br><br>
+最后一个月的时间，做好明年的计划和目标。<br><br>
+</font>
 
-<p>那么我们之所以说它是“伪私有”，是因为在了解伪私有变量的变量名压缩规则后，可以根据压缩规则进行调用。此时，我们再去访问一下更名后的名字，看一下效果：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(a._A__flag)</span><br><span class="line">a._A__func()</span><br><span class="line"><span class="comment"># 0</span></span><br><span class="line"><span class="comment"># ok</span></span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>
+<font face="STCAIYUN" color="#770000" size=4.5>
+“栀子花开，So Beautiful，So White”，栀子花开得如此可爱，我们也只能挥挥手告别欢乐和无奈，也只能感叹光阴好像流水飞快。在这种轻快明朗的歌声中，你能感受那浓浓的惆怅吗?栀子花开的季节，注定是我们离别的季节。
+</font>
 
-<p>此时，我们可以看到：成功的进行访问了。</p>
-<h3 id="5-反思"><a href="#5-反思" class="headerlink" title="5. 反思"></a>5. 反思</h3><p>通过上面的演示，我们可以看出：私有其实就是我们的Python解释器给其换了一个名字。那么此时，你再去访问它之前的名字，肯定是访问不到的，这个很好理解。</p>
-<p>此时，我也不建议你去通过我们上面的这种方法去访问。因为这样，就与Python的设计初衷相违背了，如果你要访问、修改，不妨通过<code>get</code>、<code>set</code>方法，也就是我们之前说过的“函数封装”。</p>
-<p><strong>由此可见：Python的类并不存在正在的私有属性，通过双下划线实现的伪私有属性，本质上是对变量名进行压缩，使之无法直接在外部调用。</strong></p>
-<h2 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h2><p>Python中默认的成员函数，成员变量都是公开的（public），而且Python中没有类似<code>public</code>、<code>private</code>等关键词来修饰成员函数，成员变量。</p>
-<p>在Python中定义私有变量只需要在变量名或函数名前加上“<code>__</code>”两个下划线，那么这个函数或变量就会为私有的了。</p>
-<p>在内部，Python使用一种 name mangling 技术，将 __membername替换成 _classname__membername，所以你在外部使用原来的私有成员的名字时，会提示找不到。</p>
-<p>命名混淆意在给出一个在类中定义“私有”实例变量和方法的简单途径， 避免派生类的实例变量定义产生问题，或者与外界代码中的变量搞混。 要注意的是混淆规则主要目的在于避免意外错误， 被认作为私有的变量仍然有可能被访问或修改。 在特定的场合它也是有用的，比如调试的时候， 这也是一直没有堵上这个漏洞的原因之一 （小漏洞：派生类和基类取相同的名字就可以使用基类的私有变量）。</p>
+<p><img "" class="lazyload placeholder" data-original="https://picss.sunbangyan.cn/2023/12/06/e27d7664aaadacac118de17447d5e9aa.jpeg" src="https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif"></p>
 
       </div>
       
@@ -796,7 +796,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/2020/06/22/python伪私有属性/" target="_blank" title="Python伪私有属性">https://xfrl.github.io/2020/06/22/python伪私有属性/</a>
+    <a href="/2023/12/06/2023/" target="_blank" title="2023">https://xfrl.github.io/2023/12/06/2023/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -814,42 +814,22 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="https://img11.360buyimg.com/ddimg/jfs/t1/194444/15/15789/4919285/6103eb18Eedd168ee/54810682873994f2.png" style="background-size: cover; 
-      background-position: center center;">
-    </div>
-    <a href="/2020/06/26/python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" class="post-nav-link">
-      <div class="title">
-        <i class="fa fa-angle-left"></i> Prev:
-        <div>Python-文件操作</div>
-      </div>
-      
-      <!-- <div class="content">
-        一、文件操作的作用思考：文件操作包含什么？
-答：打开、关闭、读、写、复制…
-思考：文件操作的的作用是什么？
-答：读取内容
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="https://img14.360buyimg.com/ddimg/jfs/t1/187832/30/15699/4230595/6103ea88Effdb4bb2/a62e324743fdd6d1.png" style="background-size: cover; 
+    <div class="post-nav-img lazyload" data-original="https://picss.sunbangyan.cn/2023/12/06/dc5f1fb595c4bf12a4d1115d4bc62572.jpeg" style="background-size: cover; 
       background-position: center center;">
     </div>
-    <a href="/2020/06/19/python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="post-nav-link">
+    <a href="/2023/03/03/strtok%E5%87%BD%E6%95%B0/" class="post-nav-link">
       <div class="title">
         Next: <i class="fa fa-angle-right"></i>
-        <div>Python之面向对象</div>
+        <div>字符串分割函数</div>
       </div>
       <!-- <div class="content">
-        一、理解面向对象面向对象是一种抽象化的编程思想，很多编程语言中都有的一种思想。
-例如：洗衣服
-思考：几种途径可以完成洗衣
+        strtok()函数char strtok ( char str, const char * sep );
+
+sep参数
       </div> -->
     </a>
   </div>
